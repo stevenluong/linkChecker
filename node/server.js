@@ -51,7 +51,7 @@ var process = function(website, email){
             if(!link || link.length==0){
               //console.log("No link issue - " + t.text());
               return;
-            }else if(link=="#" || link=="javascript:void(0)" || link=="javascript:void(0)" || link=="/"){
+            }else if(link[0]=="#" || link=="javascript:void(0)" || link=="javascript:void(0)" || link=="/"){
               //console.log("Not to be tested link : "+link);
               return;
             }else if(link[0]=="/"){
@@ -136,7 +136,7 @@ var formatReport = function(report){
     formattedReport = formattedReport+"<p>N/A<p/>";
   }else{
     report.ko.forEach(r=>{
-      formattedReport = formattedReport+"<p>"+r+"<p/>";
+      formattedReport = formattedReport+"<p>"+r.link+" - "+r.status+"<p/>";
     })
   }
   formattedReport = formattedReport+"<h2>Working links<h2/>";
