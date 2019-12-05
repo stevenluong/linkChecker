@@ -24,7 +24,7 @@ class Analysis extends Component {
             formData.append('email', email);
             formData.append('website', website);
             console.log(formData);
-            fetch("http://slapps.fr:8089/", {
+            fetch("https://linkchecker-node.slapps.fr/", {
                 method: 'POST',
                 headers:{
                     'Content-Type': 'application/json'
